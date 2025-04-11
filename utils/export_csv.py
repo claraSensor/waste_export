@@ -57,7 +57,8 @@ class ExportCSV:
                 server.login(EMAIL_FROM, EMAIL_PASSWORD)
                 server.sendmail(EMAIL_FROM, EMAIL_RECEIVERS, email_message.as_string())
 
-            return csv_buffer.getvalue()
+            #csv_buffer.getvalue()
         except Exception as exc:
             Logger.log_error(f"utils.export_csv.ExportCSV - send_csv - Exception: {str(exc)}")
-            return None
+        finally:
+            csv_buffer.close()

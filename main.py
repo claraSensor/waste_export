@@ -21,17 +21,12 @@ if __name__ == '__main__':
     #INPUT:
     fromdate = datetime(2025, 4, 10, 00, 00, 00, tzinfo=timezone.utc)
     todate = datetime(2025, 4, 10, 23, 59, 59, tzinfo=timezone.utc)
-
-    #fromdate_timestamp = fromdate.timestamp()
-    #todate_timestamp = todate.timestamp()
-    #fromdate=1744243200
-    #todate=1744329599
     org_id=9
 
     reading_dao = ReadingDao()
     items_to_export = reading_dao.get_items_to_export(fromdate, todate, [], org_id)
 
-    csv = ExportCSV.send_mail_csv(items_to_export)
+    ExportCSV.send_mail_csv(items_to_export)
 
 
 
