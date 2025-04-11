@@ -19,8 +19,8 @@ if __name__ == '__main__':
     Database.initialize(connection_builder)
 
     #INPUT:
-    fromdate = datetime(2025, 4, 10, 00, 00, 00, tzinfo=timezone.utc)
-    todate = datetime(2025, 4, 10, 23, 59, 59, tzinfo=timezone.utc)
+    fromdate = datetime(2025, 4, 11, 00, 00, 00, tzinfo=timezone.utc)
+    todate = datetime(2025, 4, 11, 23, 59, 59, tzinfo=timezone.utc)
     org_id=9
 
     reading_dao = ReadingDao()
