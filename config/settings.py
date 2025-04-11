@@ -16,7 +16,7 @@ ENGINE_ECHO = False
 
 # --------------------------------------------------------------- #
 LOGGER = True
-LOGGER_TO_FILE = False
+LOGGER_TO_FILE = True
 LOGGER_APPLICATION_NAME = 'BR0WASTE_00000000_DEV_V00.01_00'
 LOGGER_FORMATTER_STRING = '%(asctime)s - %(levelname)s - %(message)s'
 LOGGER_PATH = str(Path(__file__).parent.parent.absolute()) + '/logs/'
