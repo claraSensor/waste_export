@@ -35,7 +35,7 @@ class ReadingDao:
 
             stmt = text(f'SELECT '
                         f'TO_CHAR(lt.data_ora_utc, \'DD/MM/YYYY\') AS data_svuotamento, '
-                        f'lt.epc AS tag_contribuente, '
+                        f'am.epc_str AS tag_contribuente, '
                         f'CASE WHEN am.tipo=\'SECCO\' THEN 1 END AS cat_rifiuto, '
                         f'COUNT(lt.epc) AS num_svuotamenti, '
                         f'0 AS kg, '
@@ -46,7 +46,7 @@ class ReadingDao:
                         f'INNER JOIN anag_mastelli am ON (od.organization_id = am.organization_id AND lt.epc = am.epc) '
                         f'WHERE lt.msg_type=\'1\' AND od.organization_id = {org_id} AND d.stato = {ReadingDao.STATUS_DEVICE_bool["active"]} '
                         f'AND lt.timestamp_rcv BETWEEN {int(fromdate.timestamp())} AND {int(todate.timestamp())} '
-                        f'GROUP BY lt.data_ora_utc, lt.epc, am.tipo;')
+                        f'GROUP BY lt.data_ora_utc, am.epc_str, am.tipo;')
 
             result = self._db_session.execute(stmt)
             items = [list(row) for row in result.fetchall()]

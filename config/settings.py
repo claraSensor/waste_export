@@ -29,14 +29,14 @@ LOGGER_BACKUP_DAYS = 7
 # >>> SEND MAIL
 
 EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtps.aruba.it'
+EMAIL_HOST = ''
 EMAIL_PORT = 465
-EMAIL_SENDER_USER = 'support@sensorid.it'
-EMAIL_SENDER_PASSWORD = 'sensorid2010'
+EMAIL_SENDER_USER = ''
+EMAIL_SENDER_PASSWORD = ''
 
 
-EMAIL_FROM = "support@sensorid.it"
-EMAIL_PASSWORD = "sensorid2010"
+EMAIL_FROM = ""
+EMAIL_PASSWORD = ""
 
 EMAIL_RECEIVERS = ['clara.iscaro@sensorid.it']
 
